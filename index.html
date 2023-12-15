@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            width: 100vw;
+            height: 8vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2vw;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2vw;
+        }
+
+        .box {
+            background-color: black;
+            color: white;
+            font-size: 5vw;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 1.5vw 2.5vw;
+            border: 5px solid red;
+            border-radius: 17vw;
+            overflow: hidden;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <!-- <li>Home</li>
+                <li>about</li>
+                <li>contact</li> -->
+                <h1>CLOCK</h1>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="box">
+            <br>
+            <hr>
+            Current Date: <span id="date">Current Date: </span>
+            <hr><br>
+            <hr>
+            Curent Time: <span id="time">Current Time: </span>
+            <hr><br>
+        </div>
+    </div>
+    <script>
+        let a;
+        let time;
+        let date;
+        setInterval(() => {
+
+
+            a = new Date();
+            time = a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+            date = a.toLocaleDateString();
+            document.getElementById('date').innerHTML = date;
+            document.getElementById('time').innerHTML = time;
+
+        }, 1000);
+
+
+    </script>
+</body>
+
+</html>
